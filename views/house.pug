@@ -5,7 +5,12 @@ block content
   - let results=[{house_model:"wood house",house_age:"10 years",house_height:"118m"} , {house_model:"concrete house",house_age:"20 years",house_height:"50m"} , {house_model:"tree house",house_age:"50 years",house_height:"60m"}]
   div(class="container-fluid") 
    div(class="row")
-   each house,index in results
-        div(class="col-sm-2") house_model: #{house.house_model}, house_age: #{house.house_age}, house_height: #{house.house_height} 
+    each house,index in results
+       div(class="col-sm-2" onclick=`buy(${index})`) house_model: #{house.house_model}, house_age: #{house.house_age}, house_height: #{house.house_height} 
+  script.
+    let item = 0
+      function buy(item){
+        alert(`You purchased item ${item}`);
+      }
    
 
