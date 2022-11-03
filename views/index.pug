@@ -6,6 +6,7 @@ block content
   button(type='button'
   class='btn btn-secondary', onClick="doBump()") Press Me
   div(id="bump") Bump the count
+  a(href="house") house page
   script. 
     var count = 0;
     var bump = 1;
@@ -14,4 +15,3 @@ block content
       bump = bump + 1;
       document.getElementById("bump").innerHTML = "Count " + count + " with bump " + bump; 
     }
-    a(href="house") house page
