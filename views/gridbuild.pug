@@ -1,0 +1,65 @@
+extends layout
+
+
+
+block content
+
+  h1= title
+
+  - var rows = Number(query.rows)
+
+  - var cols = Number(query.cols)
+
+  - if(!(Number.isInteger(rows)) || !(Number.isInteger(cols))) {
+
+    div Passed arguments are not integers
+
+
+
+  - }
+
+
+
+  - else if(!(rows >= 1 && rows <= 10)) {
+
+   
+
+    div Range of rows must be in 1 to 10
+
+
+
+  - }
+
+
+
+  - else if(!(cols >= 1 && cols <= 10)) {
+
+   
+
+    div Range of cols must be in 1 to 10
+
+  - }
+
+
+
+  - else {
+
+    br
+
+    h1  Table
+
+    table#outer.table.table-striped.table-bordered
+
+        - for(let i = 0; i < rows; i++) {
+
+            tr#middle
+
+                - for(let j = 0; j < cols; j++) {
+
+                    td= (1 + i + j * rows)
+
+                - }
+
+        - }
+
+  - }
