@@ -2,5 +2,15 @@ extends layout
 
 block content
   h1= title
-  p I am Siva Ram #{title}
-  button(type="button", class="btn btn-secondary") Press Me for the contents
+  p I am Siva Ram #{title} (page with changes)
+  button(type='button'
+  class='btn btn-secondary', onClick="doBump()") Press Me
+  div(id="bump") Bump the count
+  script. 
+    var count = 0;
+    var bump = 1;
+    function doBump(){
+      count = count + bump;
+      bump = bump + 1;
+      document.getElementById("bump").innerHTML = "Count " + count + " with bump " + bump; 
+    }
