@@ -20,11 +20,6 @@ var selectorRouter = require('./routes/selector');
 var house = require("./models/house");
 var resourceRouter = require("./routes/resource"); 
 
-
-
-
-
-
 var app = express();
 
 // view engine setup
