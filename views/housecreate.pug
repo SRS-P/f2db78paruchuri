@@ -1,0 +1,34 @@
+extends layout 
+ 
+block content 
+  h1= title 
+ 
+  form(id='houseForm', action="/resource/house", method="POST") 
+    div.form-group 
+        label.houseAttr(for='house_model') house_model
+        input#house_model(type='text', name='house_model') 
+    div.form-group 
+        label.houseAttr(for='house_age') house_age
+        input#house_age(type='number', name='house_age') 
+    div.form-group 
+        label.houseAttr(for='house_height') house_height 
+        input#house_height(type='text', name='house_height') 
+    input(type="submit") 
+ 
+  script. 
+    document.forms['houseForm'].addEventListener('submit', (event) => { 
+      event.preventDefault(); 
+      // TODO do something here to show user that form is being submitted 
+      fetch(event.target.action, { 
+        method: 'POST', 
+        body: new URLSearchParams(new FormData(event.target)) // event.target is the form 
+      }).then((resp) => { 
+        return resp.json(); // or resp.text() or whatever the server sends 
+      }).then((body) => { 
+        alert("Save succeded") 
+        // TODO handle body 
+      }).catch((error) => { 
+        // TODO handle error 
+        alert("Save failed " + error ) 
+      }); 
+    }); 
