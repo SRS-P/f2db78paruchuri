@@ -6,3 +6,12 @@ body {
 a {
   color: #00B7FF;
 }
+.houseAttr { 
+  background-color: rgb(95, 210, 112); 
+  width: 250px;
+  border: 2px solid red;
+  border-radius: 5px 5px 5px;
+  margin-top: 2px;
+  text-align: center;
+
+} 
