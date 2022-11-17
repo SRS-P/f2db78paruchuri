@@ -22,7 +22,7 @@ router.delete('/house/:id', house_controller.house_delete);
 router.put('/house/:id', house_controller.house_update_put); 
  
 // GET request for one Costume. 
-router.get('/house/:id', house_controller.house_detail); 
+//router.get('/house/:id', house_controller.house_detail); 
  
 // GET request for list of all Costume items. 
 router.get('/house', house_controller.house_list); 
