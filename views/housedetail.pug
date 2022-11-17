@@ -1,0 +1,22 @@
+extends layout 
+ 
+block content 
+  h1= title 
+ 
+  - let houseid = toShow._id 
+  - let house_model = toShow.house_model
+  - let house_age = toShow.house_age 
+  - let house_height = toShow.house_height 
+  div 
+    div.row 
+      div(class='houseAttr mr-3') House ID is: 
+      div #{houseid} 
+    div.row 
+      div(class='houseAttr mr-3') House Model is: 
+      div #{house_model} 
+    div.row 
+      div(class='houseAttr mr-3') House age is: 
+      div #{house_age} 
+    div.row 
+      div(class='houseAttr mr-3') House height is: 
+      div #{house_height}
