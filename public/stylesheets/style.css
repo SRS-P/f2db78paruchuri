@@ -6,7 +6,15 @@ body {
 a {
   color: #00B7FF;
 }
-.houseAttr { 
+#houseAttr{
+  background-color: rgb(95, 210, 112); 
+  width: 250px;
+  border: 2px solid red;
+  border-radius: 5px 5px 5px;
+  margin-top: 2px;
+  text-align: center;
+}
+#houseForm { 
   background-color: rgb(95, 210, 112); 
   width: 250px;
   border: 2px solid red;
@@ -14,4 +22,15 @@ a {
   margin-top: 2px;
   text-align: center;
 
+  margin: 2rem auto;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 425px;
+	background-color: #FFF;
+	border-radius: 10px;
+	box-shadow: 0 10px 20px 0 rgba(#999, .25);
+	padding: .75rem;
 } 
+
+	
