@@ -2,11 +2,11 @@ extends layout
 
 block content
   h1= title
-  - let results=[{house_model:"wood house",house_age:"10 years",house_height:"118m"} , {house_model:"concrete house",house_age:"20 years",house_height:"50m"} , {house_model:"tree house",house_age:"50 years",house_height:"60m"}]
+  - let results=result
   div(class="container-fluid") 
    div(class="row")
-    each house,index in results
-       div(class="col-sm-2" onclick=`buy(${index})`) house_model: #{house.house_model}, house_age: #{house.house_age}, house_height: #{house.house_height} 
+    each value,index in results
+      div(class="col-sm-2" onclick=`buy(${index})`) house_model: #{value["house_model"]}, house_age: #{value["house_age"]}, house_height: #{value["house_height"]} 
   script.
     let item = 0
       function buy(item){
