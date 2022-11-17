@@ -2,12 +2,14 @@ extends layout
  
 block content 
   h1= title 
- 
-  - let houseid = toShow._id 
-  - let house_model = toShow.house_model
-  - let house_age = toShow.house_age 
-  - let house_height = toShow.house_height 
-  div 
+  if (toShow == null) 
+    h2 No instance to delete 
+  else
+   - let houseid = toShow._id 
+   - let house_model = toShow.house_model
+   - let house_age = toShow.house_age 
+   - let house_height = toShow.house_height 
+   div 
     div.row 
       div(class='houseAttr mr-3') House ID is: 
       div #{houseid} 
