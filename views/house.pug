@@ -1,16 +1,20 @@
 extends layout
 
 block content
-  h1= title
-  - let results=result
+  h1 Search results houses 
+  button.btn( class="btn-primary ml-1", onclick= destination) create 
+  -  var items = results
+  - console.log(items)
   div(class="container-fluid") 
-   div(class="row")
-    each value,index in results
-      div(class="col-sm-2" onclick=`buy(${index})`) house_model: #{value["house_model"]}, house_age: #{value["house_age"]}, house_height: #{value["house_height"]} 
-  script.
-    let item = 0
-      function buy(item){
-        alert(`You purchased item ${item}`);
-      }
+    div(class="row m-1") 
+      each item in items  
+        - let destination = `dispatch(\"/house/update?id=${item._id}\")` 
+        div(class="row-sm-2", class="m-1") Item #{item.house_model}(#{item.house_age}) is #{item.house_height} 
+          button.btn( class="btn-primary ml-1", onclick= destination) Update 
+          button.btn( class="btn-success ml-1", onclick= destination) Detail 
+          button.btn( class="btn-danger ml-1", onclick= destination) Delete 
    
-
+  script. 
+    function dispatch(path){ 
+      window.location.href=path 
+    }
